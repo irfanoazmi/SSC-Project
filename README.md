@@ -1,6 +1,6 @@
 **Project pacmann Python 1.**
 
-1. **OBJECTIVE**
+**OBJECTIVE**
 
 Pada project python ini, saya diminta oleh pacmann untuk membuat system kasir self-service menggunakan python. Objective yang harus dipenuhi dari system kasir ini adalah sebagai berikut:
 
@@ -11,7 +11,7 @@ Pada project python ini, saya diminta oleh pacmann untuk membuat system kasir se
 5. Customer dapat melakukan pengecekan total orderan secara keseluruhan
 6. Customer dapat menghitung total belanja yang akan dibeli dengan diskon yang sudah ditetapkan oleh took
 
-1. **FLOWCHART**
+**FLOWCHART**
 
 Berikut flowchart / alur system kasir online yang akan dibuat:
 
