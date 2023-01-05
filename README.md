@@ -25,7 +25,7 @@ Tahapan customer dalam menggunakan self-service cassiernya adalah sebagai beriku
 
 
 # DESKRIPSI TASK
-Modul transaksi_belanja.py berisikan class Transaction dengan penjelasan sebagai berikut:
+### A. Modul transaksi_belanja.py berisikan class Transaction dengan penjelasan sebagai berikut:
 
 1. Membuat dictionary kosong untuk menampung item nama, jumlah dan harga yang nanti akan diinput oleh user.
 ```python
@@ -478,7 +478,48 @@ def total_price():
  ***
 
     
-2. Modul main_belanja.py merupakan tampilan awal self-service cassier yang terhubung ke modul transaksi_belanja.py
+### B. Modul main_belanja.py merupakan tampilan awal self-service cassier yang terhubung ke modul transaksi_belanja.py.
+```python
+import transaksi_belanja as tb
+import os
+from time import sleep
+
+print('-------------------------------------------------')
+print('Selamat Datang di Kasir Online PACMANN')
+print('-------------------------------------------------')
+nama = str(input('Silahkan Masukan Nama Anda : '))
+
+os.system('cls')
+print('-------------------------------------------------')
+print('Selamat Datang di Kasir Online PACMANN')
+print('-------------------------------------------------')
+print(f'Selamat Datang {nama}!')
+print('\n')
+ready = str(input('Apakah kamu sudah siap untuk input belanjaan kamu? (Y / N): ')).lower()
+try:
+  if ready == 'y':
+    os.system('cls')
+    nama = tb.Transaction
+    nama.menu()
+  elif ready == 'n':
+    print('-------------------------------------------------')
+    print('Silahkan datang kembali ketika sudah siap input belanjaan :)')
+    print('Aplikasi akan automatis tertutup dalam 3 detik!')
+    sleep(3)
+    pass
+  else:
+    print('-------------------------------------------------')
+    print('Input anda salah, silahkan restart program!')
+    print('Aplikasi akan automatis tertutup dalam 3 detik!')
+    sleep(3)
+    pass
+except:
+  print('-------------------------------------------------')
+  print('Input anda salah, silahkan restart program!')
+  print('Aplikasi akan automatis tertutup dalam 3 detik!')
+  sleep(3)
+```
+***
 
 # CARA MENGGUNAKAN PROGRAM
 1. Download semua file/module Python ke dalam satu direktori lokal.
