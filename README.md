@@ -85,3 +85,12 @@ setelah itu klik ENTER, maka nama item berhasil di update.
 setelah itu klik ENTER, maka nama item berhasil di update.
 
 ![tampilan setelah update jumlah](https://user-images.githubusercontent.com/119559428/210807310-9834e060-c9be-4b35-b4fd-1807968435da.png)
+
+- Pilih menu 3 untuk update harga item belanjaan, dan diarahkan untuk memasukan nama item yang ingin diganti harganya.
+
+![input nama dan harga update](https://user-images.githubusercontent.com/119559428/210808159-d06e38fa-1ac3-4ec2-9b84-46b8670254d4.png)
+
+setelah itu klik ENTER, maka nama item berhasil di update.
+
+![tampilan setelah update harga](https://user-images.githubusercontent.com/119559428/210808348-8c4c57d4-3d35-436e-b993-10cb60c6d2fa.png)
+
