@@ -44,19 +44,22 @@ Tahapan customer dalam menggunakan self-service cassiernya adalah sebagai beriku
 ![simpan kedua file dalam satu directory yang sama](https://user-images.githubusercontent.com/119559428/210802861-67f5a83f-8b32-4302-b648-ade75ceb8455.png)
 
 # Hasil Test Case
-1. Buka file main_belanja.py, maka akan muncul tampilan menu utama program. user hanya perlu memasukan nama nya sebagai ID transaksi, lalu klik ENTER.
+1. **TEST 1 :** Buka file main_belanja.py, maka akan muncul tampilan menu utama program. user hanya perlu memasukan nama nya sebagai ID transaksi,
+
 ![tampilan halaman utama program, masukan ID atau nama user](https://user-images.githubusercontent.com/119559428/210803265-976c3440-f4ff-40b2-adae-19d51dafef8a.png)
+
 ![Setelah memasukan nama](https://user-images.githubusercontent.com/119559428/210803443-127689d0-21be-4f0f-b6a8-822bb49e036f.png)
 ***
 
-2. Pilih Y jika ingin melanjutkan menggunakan program dan N jika ingin menghentikannya.
-3. Setelah pilih Y, maka user akan diarahkan ke menu utama program. Pada menu ini user dapat memilih action apa yang ingin dilakukan selanjutnya. Tabel belanjaan juga ditampilkan sebagai summary dan mempermudah user untuk memilih action apa yang ingin dilakukan.
+- Pilih Y jika ingin melanjutkan menggunakan program dan N jika ingin menghentikannya.
+
+- Setelah pilih Y, maka user akan diarahkan ke menu utama program. Pada menu ini user dapat memilih action apa yang ingin dilakukan selanjutnya. Tabel belanjaan juga ditampilkan sebagai summary dan mempermudah user untuk memilih action apa yang ingin dilakukan.
 Namun pada saat pertama dibuka, tabel belanja masih kosong.
 
 ![tampilan menu utama](https://user-images.githubusercontent.com/119559428/210804144-dbe4b62c-d161-4e87-9028-da9e201153ac.png)
 ***
 
-4. Pilih menu 1 untuk menambahkan item belanja / add item. maka akan muncul perintah untuk Memasukan nama, jumlah dan harga item.
+2. **TEST 2 :** Pilih menu 1 untuk menambahkan item belanja / add item. maka akan muncul perintah untuk Memasukan nama, jumlah dan harga item.
 
 ![memasukan input secara manual](https://user-images.githubusercontent.com/119559428/210804727-e378f7fe-c35b-4a75-a470-13e4b037919e.png)
 ***
@@ -66,41 +69,63 @@ Namun pada saat pertama dibuka, tabel belanja masih kosong.
 ![setelah menambahkan 1 item](https://user-images.githubusercontent.com/119559428/210804839-242a9d99-669e-48af-adc6-3e97a2dfb52f.png)
 ***
 
-5. Pilih menu 2 untuk mengupdate / modifikasi item belanja, terdapat pilihan menu yang disediakan untuk user. 
+3. **TEST 3 :** Pilih menu 2 untuk mengupdate / modifikasi item belanja, terdapat pilihan menu yang disediakan untuk user. 
 
 ![menu pilihan update item](https://user-images.githubusercontent.com/119559428/210805697-57c4ac90-ab8c-454d-9efb-d54c61a3c27b.png)
 ***
 
-- Pilih menu 1 untuk update nama belanjaan, maka akan diarahkan untuk memasukan nama yang ingin diganti dan nama barunya.
+- Pilih menu 1 untuk **update nama** belanjaan, maka akan diarahkan untuk memasukan nama yang ingin diganti dan nama barunya.
 
 ![input nama sebelum d
 an sesudah](https://user-images.githubusercontent.com/119559428/210806029-338a45cf-95a5-43f0-bfe5-f19ef592c89a.png)
 ***
 
-setelah itu klik ENTER, maka nama item berhasil di update.
+setelah itu klik **ENTER**, maka nama item berhasil di update.
 
 ![setelah diganti namanya](https://user-images.githubusercontent.com/119559428/210806134-8335d86b-e758-4dd5-8105-4f77a85d53b0.png)
 ***
 
-- Pilih menu 2 untuk update jumlah item belanjaan, dan diarahkan untuk memasukan nama item yang akan diganti jumlahnya.
+- Pilih menu 2 untuk **update jumlah** item belanjaan, dan diarahkan untuk memasukan nama item yang akan diganti jumlahnya.
 
 ![input nama dan jumah update](https://user-images.githubusercontent.com/119559428/210807214-830040a6-a075-4fa6-9cdd-6eb73dc8af4a.png)
 ***
 
-setelah itu klik ENTER, maka nama item berhasil di update.
+setelah itu klik **ENTER**, maka nama item berhasil di update.
 
 ![tampilan setelah update jumlah](https://user-images.githubusercontent.com/119559428/210807310-9834e060-c9be-4b35-b4fd-1807968435da.png)
 ***
 
-- Pilih menu 3 untuk update harga item belanjaan, dan diarahkan untuk memasukan nama item yang ingin diganti harganya.
+- Pilih menu 3 untuk **update harga** item belanjaan, dan diarahkan untuk memasukan nama item yang ingin diganti harganya.
 
 ![input nama dan harga update](https://user-images.githubusercontent.com/119559428/210808159-d06e38fa-1ac3-4ec2-9b84-46b8670254d4.png)
 ***
 
-setelah itu klik ENTER, maka nama item berhasil di update.
+setelah itu klik **ENTER**, maka nama item berhasil di update.
 
 ![tampilan setelah update harga](https://user-images.githubusercontent.com/119559428/210808348-8c4c57d4-3d35-436e-b993-10cb60c6d2fa.png)
 ***
 
--
+- Pilih menu 4 untuk **delete item** belanjaan, dan diarahkan untuk memasukan nama item yang ingin di hapus dari tabel.
 
+![input item yang akan di delete](https://user-images.githubusercontent.com/119559428/210815337-f45d02ea-fd3d-4c6e-8a31-0b9aee50442a.png)
+***
+
+setelah itu klik **ENTER**, maka nama item berhasil di hapus.
+
+![tampilan setelah delete item](https://user-images.githubusercontent.com/119559428/210815442-b02083cc-47df-46bc-ae7a-54dec72fe360.png)
+***
+
+4. **TEST 4 :** Pilih menu 3 untuk reset transaction, maka seluruh item yang terdapat pada tabel akan terhapus.
+
+![halaman utama reset transaction](https://user-images.githubusercontent.com/119559428/210817502-ccf98a25-8d2e-467e-81be-08c1bcd7e6ca.png)
+***
+
+5. **TEST 5 :** Pilih menu 4 untuk check order, maka akan dilakukan pengcekan apakah input pada tabel sudah sesuai atau tidak.
+
+![tampilan awal check order](https://user-images.githubusercontent.com/119559428/210817900-6507999c-0c85-40a0-b67f-ee20d1a47a55.png)
+***
+
+6. **TEST 6 :** Pilih menu 5 untuk menampilkan total pembayaran dan termasuk perhitungan diskon yang didapatkan.
+
+m![halaman awal total belanjaan](https://user-images.githubusercontent.com/119559428/210818304-4e037348-1fb7-409e-8962-645a42afe1f4.png)
+***
