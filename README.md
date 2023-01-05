@@ -294,6 +294,7 @@ def update_item_qty():
       # Masukan variable yang sudah di input ke dalam dictionary baru, dan update ke dictionary belanja :
       belanja[nama][0] = jumlah_update
       belanja[nama][2] = belanja[nama][0] * belanja[nama][1]
+      
       # Tampilkan kembali list belanjaan user dalam bentuk tabel :
       Transaction.table()
       print('\n----------------------\n')
@@ -329,6 +330,7 @@ def update_item_price():
 
       belanja[nama][1] = harga_update
       belanja[nama][2] = belanja[nama][0] * belanja[nama][1]
+      
       # Tampilkan kembali list belanjaan user dalam bentuk tabel :
       Transaction.table()
       print('\n----------------------\n')
