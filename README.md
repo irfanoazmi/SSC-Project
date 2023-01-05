@@ -523,7 +523,7 @@ except:
 
 # CARA MENGGUNAKAN PROGRAM
 1. Download semua file/module Python ke dalam satu direktori lokal.
-2. Anda cukup menjalankan main_belanja.py saja, karena sudah transaksi_belanja.py sudah terimport di module tersebut. Perhatikan gambar dibawah ini :
+2. Anda cukup menjalankan main_belanja.py saja, karena transaksi_belanja.py sudah terimport di module main_belanja.py. Perhatikan gambar dibawah ini :
 ![simpan kedua file dalam satu directory yang sama](https://user-images.githubusercontent.com/119559428/210802861-67f5a83f-8b32-4302-b648-ade75ceb8455.png)
 
 # Hasil Test Case
