@@ -25,16 +25,458 @@ Tahapan customer dalam menggunakan self-service cassiernya adalah sebagai beriku
 
 
 # DESKRIPSI TASK
-1. Modul transaksi_belanja.py berisikan class Transaction dengan method sebagai berikut :
-    - menu() untuk menampilkan pilihan ke method lain
-    - add_item() untuk memasukan nama, jumlah dan harga item ke dalam dictionary
-    - update_item_name() untuk mengubah nama item yang terdapat dalam dictionary
-    - update_item_qty() untuk mengubah jumlah item yang terdapat dalam dictionary
-    - update_item_price() untuk mengubah harga item yang terdapat dalam dictionary
-    - delete_item() untuk menghapus item spesifik beserta jumlah dan harganya dari dictionary
-    - reset_transaction() untuk menghapus semua item dari dictionary
-    - check_order() untuk memastikan kelengkapan data pada dictionary belanja, dan menampilkan summary order
-    - total_price() untuk menampilkan diskon yang didapat dan total harga setelah diskon
+Modul transaksi_belanja.py berisikan class Transaction dengan penjelasan sebagai berikut:
+
+1. Membuat dictionary kosong untuk menampung item nama, jumlah dan harga yang nanti akan diinput oleh user.
+```python
+# membuat dictionary kosong :
+belanja = {}
+# membuat class Transaction :
+class Transaction:
+```
+***
+
+2. Membuat method table() yang digunakan untuk mengkonversi dictionary belanja menjadi table dengan library tabulate dan pandas. method table ini akan selalu di panggil method lainnya.
+```python
+def table():
+  print('Item belanjaan anda : ')
+  from tabulate import tabulate
+  import pandas as pd
+  df = pd.DataFrame(belanja)
+  df = df.astype('str')
+  print(tabulate(df.T, headers = ['Jumlah', 'Harga', 'Total Harga']))
+```
+***
+3. membuat method menu() untuk menampilkan pilihan kepada user dan akan terhubung ke method lainnya.
+```python
+  def menu():
+    """
+    Method ini seperti homepage aplikasi untuk mempermudah user.
+    Terdapat pilihan menu yang sudah terhubung ke method lain seperti add_item, update_item, dan lainnya.
+    Tabel belanjaan user juga akan muncul di sisi atas menu pilihan untuk mempermudah user dalam menentukan pilihannya, 
+    sehingga terlihat apakah ada salah input dan harus diubah nilainya.
+    """
+    # Menampilkan Tabel Belanjaan User :
+    print('-------------------------------------------------')
+    print('Selamat Datang di Kasir Online PACMANN')
+    print('-------------------------------------------------')
+    print('\n')
+    Transaction.table()
+
+    # Menampilkan Pilihan Menu :
+    print('\n')
+    print('Silahkan Pilih Salah Satu Menu Dibawah: ')
+    print('Pilih 1 untuk add item')
+    print('pilih 2 untuk update/modifikasi item')
+    print('pilih 3 untuk reset transaksi')
+    print('pilih 4 untuk check order')
+    print('pilih 5 untuk menghitung total pembayaran')
+    print('pilih 0 untuk close app')
+
+    # try except dibuat untuk mengetahui apakah user sudah menginput dengan benar atau tidak :
+    try:
+      # Membuat variable input untuk memilih pilihan pada menu:
+      nilai = int(input('\nPilih Salah Satu Menu: '))
+      
+      # Jika user pilih 1, maka akan menuju method add_item():
+      if nilai == 1: 
+        os.system('cls')
+        # Menampilkan Tabel Belanjaan User :
+        Transaction.table() 
+        print('\n----------------------\n')
+        Transaction.add_item()
+
+      # Jika user pilih 2, maka user akan mengupdate / modifikasi item belanjaan :  
+      elif nilai == 2:
+
+        # Check terlebih dahulu, jika dictionary belanja masih kosong, maka beri peringatan dan kembali ke menu utama :
+        if len(belanja) == 0:
+          print('Tidak ada item yang bisa dimodifikasi, anda akan kembali ke menu utama dalam 5 detik')
+          sleep(5)
+          os.system('cls')
+          print('\n----------------------\n')
+          Transaction.menu()
+
+        # Jika dictionary belanja sudah ada isinya, maka tampilkan pilihan modifikasi apa yang diinginkan user :
+        else:
+          print('\n----------------------\n')
+          print('Silahkan Pilih Salah Satu Menu Dibawah: ')
+          print('pilih 1 untuk update nama')
+          print('pilih 2 untuk update jumlah')
+          print('pilih 3 untuk update harga')
+          print('pilih 4 untuk menghapus item belanja')
+          print('pilih 0 untuk kembali ke menu utama')
+          # Buat variable input untuk memasukan pilihan user dengan format int :
+          update = int(input('\nPilih salah satu update: '))
+
+          # Jika user pilih 1, maka akan menuju method update_item_name():
+          if update == 1:
+            os.system('cls')
+            # Menampilkan Tabel Belanjaan User :
+            Transaction.table() 
+            print('\n----------------------\n')
+            Transaction.update_item_name()
+
+          # Jika user pilih 2, maka akan menuju method update_item_qty():
+          elif update == 2:
+            os.system('cls')
+            # Menampilkan Tabel Belanjaan User :
+            Transaction.table()
+            print('\n----------------------\n')
+            Transaction.update_item_qty()
+
+          # Jika user pilih 3, maka akan menuju method update_item_price():
+          elif update == 3:
+            os.system('cls')
+            # Menampilkan Tabel Belanjaan User :
+            Transaction.table()
+            print('\n----------------------\n')
+            Transaction.update_item_price()
+
+          # Jika user pilih 4, maka akan menuju method delete_item():
+          elif update == 4:
+            os.system('cls')
+            # Menampilkan Tabel Belanjaan User :
+            Transaction.table()
+            print('\n----------------------\n')
+            Transaction.delete_item()
+
+          # Jika user pilih 0, maka akan menuju menu utama:
+          elif update == 0:
+            os.system('cls')
+            print('\n----------------------\n')
+            Transaction.menu()
+          
+      # Jika user pilih 3, maka akan menuju method reset_transaction(): 
+      elif nilai == 3:
+        os.system('cls')
+        print('\n----------------------\n')
+        Transaction.reset_transaction()
+      
+      # Jika user pilih 4, maka akan menuju method check_order():   
+      elif nilai == 4:
+        os.system('cls')
+        Transaction.check_order()
+
+      # Jika user pilih 5, maka akan menuju method total_price():   
+      elif nilai == 5:
+        os.system('cls')
+
+      # Menampilkan Tabel Belanjaan User :
+        Transaction.table()
+
+        print('\n----------------------\n')
+        Transaction.total_price()
+
+      # Jika user pilih 0, maka akan menuju menu utama:  
+      elif nilai == 0:
+        os.system('cls')
+        print('\n----------------------\n')
+        pass
+      
+      # Jika user memilih diluar angka pada pilihan, maka tampilan peringatan!
+      else:
+        print('Pilih menu yang sesuai!')
+        print('Input tidak sesuai, anda akan kembali ke menu utama dalam 3 detik!')
+        sleep(3)
+        os.system('cls')
+
+    # Jika user memasukan input dengan format str, contoh : 'a', maka tampilkan peringatan!
+    except:
+      print('Input tidak sesuai, anda akan kembali ke menu utama dalam 5 detik!')
+      sleep(5)
+      os.system('cls')
+      print('\n----------------------\n')
+      Transaction.menu()
+ ```
+ ***
+3. Membuat method add_item() untuk memasukan nama, jumlah dan harga item ke dalam dictionary belanja.
+```python
+def add_item():
+    """
+    Pada method ini user akan memasukan item belanjaan mereka dengan rincinan nama, jumlah dan harganya.
+    tabel list belanjaan juga akan ditampilkan untuk mengetahui apa saja yang sudah user input.
+    """
+    # try except dibuat untuk mengetahui apakah user sudah menginput dengan benar atau tidak :
+    try:
+      # Buat variable input untuk memasukan nama item, jumlah item, dan harga item dengan format tertentu :
+      nama = str(input('Masukan item yang akan dibeli: '))
+      jumlah = int(input(f'Masukan jumlah {nama} yang akan dibeli: '))
+      harga = int(input(f'Masukan Harga {nama} yang akan dibeli: '))
+      os.system('cls')
+      
+      # Masukan variable yang sudah di input ke dalam dictionary baru, dan update ke dictionary belanja :
+      item = {nama : [jumlah, harga, jumlah * harga]}
+      belanja.update(item)
+
+      # Tampilkan kembali list belanjaan user dalam bentuk tabel :
+      Transaction.table()
+      print('\n----------------------\n')
+      print(f'Item belanja {nama} berhasil di tambahkan!')
+      print('\n')
+
+      # Beri pilihan kepada user apakah ingin melanjutkan untuk input item atau kembali ke menu utama :
+      repeat = str(input('Apakah akan menginput item selanjutnya? (Y / N) ')).lower()
+      if repeat == 'y':
+        Transaction.add_item()
+      elif repeat == 'n':
+        os.system('cls')
+        Transaction.menu()
+
+    # Jika user memasukan input dengan format str pada variable jumlah dan harga, maka beri peringatan :
+    except:
+      print('\n')
+      print('Format input anda salah, anda akan kembali ke menu utama dalam 5 detik!')
+      print('\n----------------------\n')
+      sleep(5)
+      os.system('cls')
+      Transaction.menu()
+ ```
+ ***
+ 4. Membuat methode update_item_name() untuk mengubah nama item yang terdapat dalam dictionary.
+ ```python
+ def update_item_name():
+    """
+    Pada method ini user dapat mengubah nama item yang telah di input sebelumnya
+    """
+    # try except dibuat untuk mengetahui apakah user sudah menginput dengan benar atau tidak :
+    try:
+      # Buat variable untuk memasukan nama item yang ingin diganti dan nama item yang baru
+      nama = str(input('Masukan nama item yang ingin diganti: '))
+      nama_update = str(input('Masukan nama item yang baru: '))
+      os.system('cls')
+
+      # Masukan variable yang sudah di input ke dalam dictionary baru, dan update ke dictionary belanja :
+      dict_baru = {nama_update : belanja[nama]}
+      belanja.update(dict_baru)
+      belanja.pop(nama)
+
+      # Tampilkan kembali list belanjaan user dalam bentuk tabel :
+      Transaction.table()
+      print('\n----------------------\n')
+      print(f'Item belanja {nama} telah diganti menjadi {nama_update}!')
+      print('\n')
+
+      # Beri pilihan kepada user apakah ingin kembali ke menu utama atau tidak :
+      repeat = str(input('Kembali ke menu utama? (Y / N) ')).lower()
+      if repeat == 'y':
+        os.system('cls')
+        Transaction.menu()
+      elif repeat == 'n':
+        pass
+
+    # Jika user salah memasukan input nama item yang ingin diganti, maka beri peringatan :  
+    except:
+      print('\n')
+      print(f'item {nama} tidak terdapat pada list belanjaan anda!')
+      print('anda akan kembali ke menu utama dalam 5 detik!')
+      sleep(5)
+      os.system('cls')
+      Transaction.menu()
+```
+***
+5. Membuat method update_item_qty() untuk mengubah jumlah item yang terdapat dalam dictionary.
+```python
+def update_item_qty():
+    """
+    Pada method ini user dapat mengubah jumlah item yang telah di input sebelumnya
+    """
+    # try except dibuat untuk mengetahui apakah user sudah menginput dengan benar atau tidak :
+    try:
+      # Buat variable untuk memasukan nama item yang ingin diganti jumlahnya
+      nama = str(input('Masukan nama item yang ingin diganti jumlahnya: '))
+      jumlah_update = int(input('Masukan jumlah item yang baru: '))
+      os.system('cls')
+
+      # Masukan variable yang sudah di input ke dalam dictionary baru, dan update ke dictionary belanja :
+      belanja[nama][0] = jumlah_update
+      belanja[nama][2] = belanja[nama][0] * belanja[nama][1]
+      # Tampilkan kembali list belanjaan user dalam bentuk tabel :
+      Transaction.table()
+      print('\n----------------------\n')
+      print(f'Item belanja {nama} berhasil diubah jumlahnya menjadi {jumlah_update}!')
+      print('\n')
+      
+      # Beri pilihan kepada user apakah ingin kembali ke menu utama atau tidak :
+      repeat = str(input('Kembali ke menu utama? (Y / N) ')).lower()
+      if repeat == 'y':
+        os.system('cls')
+        Transaction.menu()
+      elif repeat == 'n':
+        pass 
+
+    # Jika user salah memasukan input nama item yang ingin diganti, maka beri peringatan :  
+    except:
+      print('\n')
+      print(f'item {nama} tidak terdapat pada list belanjaan anda!')
+      print('anda akan kembali ke menu utama dalam 5 detik!')
+      sleep(5)
+      os.system('cls')
+      Transaction.menu()
+```
+***
+
+6. Membuat method update_item_price() untuk mengubah harga item yang terdapat dalam dictionary.
+```python
+def update_item_price():
+    try:
+      nama = str(input('Masukan nama item yang ingin diganti harganya: '))
+      harga_update = int(input('Masukan harga item yang baru: '))
+      os.system('cls')
+
+      belanja[nama][1] = harga_update
+      belanja[nama][2] = belanja[nama][0] * belanja[nama][1]
+      # Tampilkan kembali list belanjaan user dalam bentuk tabel :
+      Transaction.table()
+      print('\n----------------------\n')
+      print(f'Item belanja {nama} berhasil diubah harganya menjadi Rp {harga_update}!')
+      print('\n')
+
+      repeat = str(input('Kembali ke menu utama? (Y / N) ')).lower()
+      if repeat == 'y':
+        os.system('cls')
+        Transaction.menu()
+      elif repeat == 'n':
+        pass
+
+    except:
+      print('\n')
+      print(f'item {nama} tidak terdapat pada list belanjaan anda!')
+      print('anda akan kembali ke menu utama dalam 5 detik!')
+      sleep(5)
+      os.system('cls')
+      Transaction.menu()
+```
+***
+
+7. membuat method delete_item() untuk menghapus item spesifik beserta jumlah dan harganya dari dictionary.
+```python
+def delete_item():
+    try:
+      nama = str(input('Masukan nama item yang ingin dihapus: '))
+      belanja.pop(nama)
+      os.system('cls')
+
+      # Tampilkan kembali list belanjaan user dalam bentuk tabel :
+      Transaction.table()
+
+      print('\n----------------------\n')
+      print(f'Item belanja {nama} berhasil di delete!')
+      print('\n')
+
+      repeat = str(input('Kembali ke menu utama? (Y / N) ')).lower()
+      if repeat == 'y':
+        os.system('cls')
+        Transaction.menu()
+      elif repeat == 'n':
+        pass
+
+    except:
+      print('\n')
+      print(f'item {nama} tidak terdapat pada list belanjaan anda!')
+      print('anda akan kembali ke menu utama dalam 5 detik!')
+      sleep(5)
+      os.system('cls')
+      Transaction.menu()
+```
+***
+8. Membuat method reset_transaction() untuk menghapus semua item dari dictionary.
+```python
+def reset_transaction():
+    belanja.clear()
+    os.system('cls')
+    
+    # Tampilkan kembali list belanjaan user dalam bentuk tabel :
+    Transaction.table()
+
+    print('\n----------------------\n')
+    print('Semua item belanja berhasil di delete!')
+    print('\n')
+
+    repeat = str(input('Kembali ke menu utama? (Y / N) ')).lower()
+    if repeat == 'y':
+      os.system('cls')
+      Transaction.menu()
+    elif repeat == 'n':
+      pass
+```
+***
+
+9. Membuat method check_order() untuk memastikan kelengkapan data pada dictionary belanja, dan menampilkan summary order.
+```python
+ def check_order():
+
+    Transaction.table()
+
+    print('\n')
+    print('Pemesanan anda sudah benar')
+    print(f'Total item yang dibeli sebanyak : {len(belanja)} item')
+
+    total = 0
+    for key in belanja: 
+      total = total + belanja[key][2]
+    print(f'Total biaya sebelum diskon : Rp {total}')
+   
+    print('\n')
+    repeat = str(input('Kembali ke menu utama? (Y / N) ')).lower()
+    if repeat == 'y':
+      os.system('cls')
+      Transaction.menu()
+    elif repeat == 'n':
+      pass 
+```
+***
+
+10. membuat method total_price() untuk menampilkan diskon yang didapat dan total harga setelah diskon.
+```python
+def total_price():
+    ## Menghitung total harga
+    total = 0
+    total_belanja = 0
+    for key in belanja: 
+      total = total + belanja[key][2]
+        
+    ## Klasifikasi besar diskon yang didapat berdasarkan total harga
+    if total >= 500000:
+      diskon = 0.1
+      total_belanja = total - (total*diskon)
+      ('\n----------------------\n')
+      print('Selamat anda mendapatkan diskon 10%!')
+      print(f'Total belanjaan anda adalah : Rp {int(total_belanja)}')
+      ('\n----------------------\n')
+
+    elif total >= 300000:
+      diskon = 0.08
+      total_belanja = total - (total*diskon)
+      ('\n----------------------\n')
+      print('Selamat anda mendapatkan diskon 8%!')
+      print(f'Total belanjaan anda adalah : Rp {int(total_belanja)}')
+      ('\n----------------------\n')
+
+    elif total >= 200000:
+      diskon = 0.05
+      total_belanja = total - (total*diskon)
+      ('\n----------------------\n')
+      print('Selamat anda mendapatkan diskon 5%!')
+      print(f'Total belanjaan anda adalah : Rp {int(total_belanja)}')
+      ('\n----------------------\n')
+
+    else:
+      ('\n----------------------\n')
+      print('Mohon maaf anda tidak mendapatkan diskon!')
+      print(f'Total belanjaan anda adalah : Rp {int(total)}')
+      ('\n----------------------\n')
+    
+    print('\n')
+    repeat = str(input('Kembali ke menu utama? (Y / N) ')).lower()
+    if repeat == 'y':
+      os.system('cls')
+      Transaction.menu()
+    elif repeat == 'n':
+      pass  
+ ```
+ ***
+
     
 2. Modul main_belanja.py merupakan tampilan awal self-service cassier yang terhubung ke modul transaksi_belanja.py
 
