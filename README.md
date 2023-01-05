@@ -14,7 +14,7 @@ Berikut flowchart / alur system kasir online yang akan dibuat:
 
 ![flow chart](https://user-images.githubusercontent.com/119559428/210802519-2b2e6409-9995-45a2-b181-3ee2775a7c12.png)
 
-Tahapan customer dalam menggunakan self-service cassiernya adalah sebagai berikut:
+Tahapan customer dalam menggunakan self-service cashier-nya adalah sebagai berikut:
 1. Customer akan memulai program dengan membuka script .py yang telah disediakan.
 2. Customer akan memasukan ID atau nama customer yang digunakan sebagai ID transaksi.
 3. Selanjutnya customer akan memasukan nama item, jumlah dan harganya.
@@ -478,7 +478,7 @@ def total_price():
  ***
 
     
-### B. Modul main_belanja.py merupakan tampilan awal self-service cassier yang terhubung ke modul transaksi_belanja.py.
+### B. Modul main_belanja.py merupakan tampilan awal self-service cashier yang terhubung ke modul transaksi_belanja.py.
 ```python
 import transaksi_belanja as tb
 import os
