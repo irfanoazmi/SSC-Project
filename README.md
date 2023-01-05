@@ -127,5 +127,5 @@ setelah itu klik **ENTER**, maka nama item berhasil di hapus.
 
 6. **TEST 6 :** Pilih menu 5 untuk menampilkan total pembayaran dan termasuk perhitungan diskon yang didapatkan.
 
-m![halaman awal total belanjaan](https://user-images.githubusercontent.com/119559428/210818304-4e037348-1fb7-409e-8962-645a42afe1f4.png)
+![halaman awal total belanjaan](https://user-images.githubusercontent.com/119559428/210818304-4e037348-1fb7-409e-8962-645a42afe1f4.png)
 ***
