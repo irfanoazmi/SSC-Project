@@ -612,3 +612,13 @@ setelah itu klik **ENTER**, maka nama item berhasil di hapus.
 
 ![halaman awal total belanjaan](https://user-images.githubusercontent.com/119559428/210818304-4e037348-1fb7-409e-8962-645a42afe1f4.png)
 ***
+
+# KESIMPULAN
+1. Pada project ini telah diterapkan prinsip DRY (Dont Repeat Yourself) dan Re-using Code dengan menggunakan function / method seperti add_item(), update_item_name(), check_order(), table() dll. Sehingga program menjadi mudah dipahami, terstruktur, ringkas dan memperkecil terjadinya bug / eror.
+2. Pada project ini sudah diatur untuk eror handlingnya dengan menggunakan try dan except.
+3. Pada project ini sudah menerapkan Clean Code PEP 8, sehingga program mejadi lebih rapi, mudah dibaca dan dipahami
+
+# FUTURE WORK
+1. input item dengan scan barcode, sehingga tidak perlu memasukan nama dan harga secara manual.
+2. Merapihkan tampilan agar tidak membingungkan user.
+3. Dapat menyimpan item belanjaan user kedalam keranjang. sehingga dapat dipanggil kembali jika dibutuhkan.
