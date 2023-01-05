@@ -1,5 +1,6 @@
 # OBJECTIVE
-Pada project python ini, saya diminta oleh pacmann untuk membuat system kasir self-service menggunakan python. Objective yang harus dipenuhi dari system kasir ini adalah sebagai berikut:
+Pada project python ini, saya diminta oleh pacmann untuk membuat system kasir self-service menggunakan python, diharapkan system kasir yang dibuat dapat membantu siapapun yang sedang mengembangkan warung jujur yang customernya milih barang sendiri, bayar sendiri dan ambil kembaliannya sendiri.
+Objective yang harus dipenuhi dari system kasir ini adalah sebagai berikut:
 
 1. Customer dapat membuat ID transaksinya (class Transaction)
 2. Customer dapat memasukan nama, jumlah dan harga barang
@@ -12,6 +13,16 @@ Pada project python ini, saya diminta oleh pacmann untuk membuat system kasir se
 Berikut flowchart / alur system kasir online yang akan dibuat:
 
 ![](RackMultipart20230103-1-1pa1y_html_6d063da423c67d01.png)
+
+Tahapan customer dalam menggunakan self-service cassiernya adalah sebagai berikut:
+1. Customer akan memulai program dengan membuka script .py yang telah disediakan.
+2. Customer akan memasukan ID atau nama customer yang digunakan sebagai ID transaksi.
+3. Selanjutnya customer akan memasukan nama item, jumlah dan harganya.
+4. customer akan mengecek apakah data yang dimasukan sudah benar atau tidak, jika tidak benar customer dapat melakukan reset dan datanya akan terhapus semua, atau memodifikasi individual antara nama item, jumlah atau harganya.
+5. jika sudah benar data yang di input, customer akan melakukan pengecekan total harga, apakah mendapatkan diskon atau tidak.
+6. customer membayar belanjaannya
+7. program selesai.
+
 
 # DESKRIPSI TASK
 1. Modul transaksi_belanja.py berisikan class Transaction dengan method sebagai berikut :
