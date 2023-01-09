@@ -220,7 +220,7 @@ def repeat():
         print('\n----------------------\n')
         Transaction.total_price()
 
-      # Jika user pilih 0, maka akan menuju menu utama:  
+      # Jika user pilih 0, maka akan menutup aplikasi:  
       elif nilai == 0:
         os.system('cls')
         print('\n----------------------\n')
