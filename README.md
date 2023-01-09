@@ -60,7 +60,8 @@ def table():
 ***
 3. Membuat method repeat() untuk memberikan kepada user agar pergi ke menu utama atau tidak.
 ```python
-"""
+def repeat():
+    """
     Method ini digunakan untuk memberikan pilihan kepada user untuk pergi menu utama atau tidak
     """
     # try except dibuat untuk mengetahui apakah user sudah menginput dengan benar atau tidak :
