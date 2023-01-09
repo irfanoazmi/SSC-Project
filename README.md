@@ -30,12 +30,26 @@ Tahapan customer dalam menggunakan self-service cashier-nya adalah sebagai berik
 # DESKRIPSI TASK
 ### A. Modul transaksi_belanja.py berisikan class Transaction dengan penjelasan sebagai berikut:
 
-1. Membuat dictionary kosong untuk menampung item nama, jumlah dan harga yang nanti akan diinput oleh user.
+1. Membuat dictionary kosong untuk menampung item nama, jumlah dan harga yang nanti akan diinput oleh user, serta membuat class Transaction yang berisi beberapa method.
 ```python
 # membuat dictionary kosong :
 belanja = {}
 # membuat class Transaction :
 class Transaction:
+ """
+  Pada class Transaction terdapat beberapa method, yaitu :
+  1. menu() untuk menampilkan pilihan ke method lain
+  2. add_item() untuk memasukan nama, jumlah dan harga item ke dalam dictionary
+  3. update_item_name() untuk mengubah nama item yang terdapat dalam dictionary
+  4. update_item_qty() untuk mengubah jumlah item yang terdapat dalam dictionary
+  5. update_item_price() untuk mengubah harga item yang terdapat dalam dictionary
+  6. delete_item() untuk menghapus item spesifik beserta jumlah dan harganya dari dictionary
+  7. reset_transaction() untuk menghapus semua item dari dictionary
+  8. check_order() untuk memastikan kelengkapan data pada dictionary belanja, dan menampilkan summary order
+  9. total_price() untuk menampilkan diskon yang didapat dan total harga setelah diskon
+  10. table() untuk membuat table dari dictionary belanja
+  11. repeat() untuk memberikan pilihan kepada user untuk ke menu utama
+  """
 ```
 ***
 
