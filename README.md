@@ -1,5 +1,6 @@
 # SSC Project
 Self Service Cashier (SSC) sederhana dengan menggunakan bahasa pemrograman Python.
+Link presentasi youtube : https://www.youtube.com/watch?v=GkmTVnbPUlA
 
 # OBJECTIVE
 Pada project python ini, saya diminta oleh pacmann untuk membuat system kasir self-service menggunakan python, diharapkan system kasir yang dibuat dapat membantu siapapun yang sedang mengembangkan warung jujur yang customernya milih barang sendiri, bayar sendiri dan ambil kembaliannya sendiri.
